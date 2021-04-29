@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<style>
+
+
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+  <h2>PERSONAL INFORMATION:</h2> 
+  
+  
+
+<div ng-app="myApp" ng-controller="formCtrl">
+<form novalidate >
+<p>Enter Your Name : <br> <input type="text" ng-model="input1.Your_Name_Is"></p>
+<p>Enter Your Address :<br><input type="text" ng-model="input2.Your_Address_Is"></p>
+<p>Enter Your SHS High School : <br><input type="text" ng-model="input3.Your_SHS_Is"></p>
+<p>Enter Your Course :<br> <input type="text" ng-model="input4.Your_Course_Is"></p>
+
+<button ng-click="reset()">RESET</button>
+ </form>
+  
+  <h4>{{input1}}</h4>
+  <h4>{{input2}}</h4>
+  <h4>{{input3}}</h4>
+  <h4>{{input4}}</h4>
+  
+  
+  
+  
+  
+  
+  <div ng-app = ""  ng-init = "desserts = [
+{name:'Ice cream' , flavor:' Chocolate ' , description:'1 Gallon'},
+{name:'Leche Flan' , flavor:'Ube' , description:'1 Piece'},
+{name:'Buko Pie' , flavor:'Coconut' ,description:'1 Piece'},
+{name:'Ube Halaya' , flavor:'Ube' , description:'1 Slice'},
+{name:'Mais Con Yelo' , flavor:'Mais' , description:'1 Cup'},
+{name:'Turon' , flavor:'Banana' , description:'1 Piece'},
+{name:'Buko Pandan',flavor:'Buko & Pandan' , description:'1 Cup'},
+{name:'Avocado Jelly' , flavor:'Avocado' ,description:'1 Cup'},
+{name:'Biko' , flavor:'Common' , description:'1 Slice'},
+{name:'Bibingka' , flavor:'Coconut' ,description:'1 Slice'}
+  
+  
+  
+  ]"> 
+
+
+  
+  
+<h2>LIST OF FOODS:</h2> 
+<ol>
+  
+ <li ng-repeat = "dessert in desserts"> 
+{{ 'Dessert: ' + dessert.name + ', Flavor: ' + dessert.flavor  + ', Description:' + dessert.description}} </li> </ol>
+ </div> 
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.master ;
+    $scope.reset = function() {
+      $scope.input1 = angular.copy($scope.master);
+      $scope.input2 = angular.copy($scope.master);
+      $scope.input3 = angular.copy($scope.master);
+      $scope.input4 = angular.copy($scope.master);
+    
+      
+      
+      
+    };
+    $scope.reset();
+});
+</script>
+  
+  
+  
+  
+  
+  
+</body>
+</html>
